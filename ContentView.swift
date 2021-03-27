@@ -75,7 +75,7 @@ struct ContentView: View {
     }
     var body: some View {
         NavigationView {
-            VStack{
+        VStack{
                 TextField("Enter your word", text: $newWord, onCommit: addNewWord)
                     .autocapitalization(.none)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -89,15 +89,12 @@ struct ContentView: View {
             .navigationTitle(rootWord)
             .onAppear(perform: startGame)
             .alert(isPresented: $showingError) {
-                
                 Alert(title: Text(errorTitle), message: Text(errorMessage), dismissButton: .default(Text("OK")))
             }
         }
         
     }
 }
-   
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
